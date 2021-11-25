@@ -6,9 +6,7 @@ const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
   const [allWaves, setAllWaves] = useState([]);
   const [tweetValue, setTweetValue] = React.useState("");
-    /**
-   * Create a variable here that holds the contract address after you deploy!
-   */
+
   const contractAddress = "0xb4E138835D1f9fFD3e1A4195205881c563cE53A5";
   const contractABI = abi.abi
 
@@ -37,9 +35,7 @@ const App = () => {
     }
   }
 
-  /**
-  * Implement your connectWallet method here
-  */
+
   const connectWallet = async () => {
     try {
       const { ethereum } = window;
@@ -70,9 +66,6 @@ const wave = async () => {
         let count = await wavePortalContract.getTotalWaves();
         console.log("Retrieved total wave count...", count.toNumber());
 
-        /*
-        * Execute the actual wave from your smart contract
-        */
         const waveTxn = await wavePortalContract.wave(tweetValue,{gasLimit:300000});
         console.log("Mining...", waveTxn.hash);
 
@@ -118,9 +111,6 @@ const getAllWaves = async () => {
   }
 };
 
-/**
- * Listen in for emitter events!
- */
 useEffect(() => {
   let wavePortalContract;
 
@@ -160,22 +150,22 @@ return (
     <div className="mainContainer">
       <div className="dataContainer">
         <div className="header">
-          👋 Hey there!
+          👋 Good Morning!
         </div>
 
         <div className="bio">
-          I am farza and I worked on self-driving cars so that's pretty cool right? Connect your Ethereum wallet and wave at me!
+          Connect your Ethereum wallet and wave at me!
         </div>
           {
           currentAccount ? (<textarea name="tweetArea"
-            placeholder="type your tweet"
+            placeholder="Type your message"
             type="text"
             id="tweet"
             value={tweetValue}
             onChange={e => setTweetValue(e.target.value)} />) : null
         }
         <button className="waveButton" onClick={wave}>
-          Wave at Me
+          Post
         </button>
 
         {!currentAccount && (
@@ -185,7 +175,7 @@ return (
         )}
         {allWaves.slice(0).reverse().map((wave, index) => {
           return (
-            <div key={index} style={{ backgroundColor: "OldLace", marginTop: "16px", padding: "8px"}}>
+            <div key={index} style={{ backgroundColor: "OldLace", marginTop: "16px", padding: "8px"}} className = "postCard">
               <div>Address: {wave.address}</div>
               <div>Time: {wave.timestamp.toString()}</div>
               <div>Message: {wave.message}</div>

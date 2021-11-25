@@ -14,21 +14,62 @@
 
 .header {
   text-align: center;
-  font-size: 32px;
+  font-size: 45px;
   font-weight: 600;
+  font-family: cooper-black-std, serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .bio {
   text-align: center;
-  color: gray;
+  color: #363328;
   margin-top: 16px;
+  margin-bottom: 16px;
+  font-weight: 300;
 }
 
 .waveButton {
   cursor: pointer;
   margin-top: 16px;
-  padding: 8px;
+  padding: 12px;
   border: 0;
   border-radius: 5px;
+  font-weight: 600;
+  font-size: 22px;
+  color: white;
+  background-color: black;
+  
+}
+
+.waveButton:hover{
+  background-color: rgb(43, 42, 42);
+}
+
+textArea{
+  outline: none;
+  resize: none;
+  margin-top: 10px;
+  width: 500px;
+  height: 100px;
+  background: none repeat scroll 0 0 rgba(107, 107, 107, 0.171);
+  border-image: none;
+  border-radius: 10px;
+  color: #black;
+  font-size: 18px;
+  font-family: nunito;
+  font-weight: 600;
+  line-height: 1.4em;
+  padding: 8px 12px;
+  transition: background-color 0.2s ease 0s;
+  border: none;
+
+}
+
+.postCard{
+  marginTop: 16px;
+  padding: 8px;
+  background-color: red;
+  
   
 }
