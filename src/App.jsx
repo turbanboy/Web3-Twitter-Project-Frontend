@@ -155,7 +155,7 @@ return (
         </div>
 
         <div className="bio">
-          Connect your Ethereum wallet and wave at me!
+          Connect your Ethereum Rinkeby Testnet wallet and post something nice!
         </div>
           {
           currentAccount ? (<textarea name="tweetArea"
