@@ -39,7 +39,7 @@
   font-size: 22px;
   color: white;
   background-color: black;
-  
+  margin-bottom: 16px;
 }
 
 .waveButton:hover{
@@ -68,8 +68,20 @@ textArea{
 
 .postCard{
   marginTop: 16px;
-  padding: 8px;
-  background-color: red;
-  
-  
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;    
+  box-sizing: border-box;         
+  font-family: nunito;
+  font-weight: 300;
+  padding: 15px;
+  transition: transform .2s ease;
+  border-radius: 12px;
+  background-color: #FFF;  
+  margin-bottom: 16px;
+}
+
+.message{
+  font-weight: 600;
+  font-size: 2em;
+  font-family: nunito;
 }

@@ -56,6 +56,7 @@ const App = () => {
 
 const wave = async () => {
     try {
+      setTweetValue('');
       const { ethereum } = window;
 
       if (ethereum) {
@@ -175,10 +176,10 @@ return (
         )}
         {allWaves.slice(0).reverse().map((wave, index) => {
           return (
-            <div key={index} style={{ backgroundColor: "OldLace", marginTop: "16px", padding: "8px"}} className = "postCard">
+            <div key={index} className = "postCard">
+             <div className = "message" >{wave.message}</div>
               <div>Address: {wave.address}</div>
               <div>Time: {wave.timestamp.toString()}</div>
-              <div>Message: {wave.message}</div>
             </div>)
         })}
       </div>
